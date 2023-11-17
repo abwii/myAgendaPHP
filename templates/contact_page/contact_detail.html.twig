@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact Details{% endblock %}
+
+{% block body %}
+        <!-- Product section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://thispersondoesnotexist.com" alt="..." /></div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder">{{contact.nom}}</h1>
+                        <h2 class="lead"> {{contact.prenom}} </h2>
+                        <h2 class="lead"> {{contact.email}} </h2>
+                        <h2 class="lead"> {{contact.telephone}} </h2>
+                        <div class="d-flex">
+                        <button class="btn btn-outline-danger flex-shrink-0 me-3" type="button" onclick="if(confirm('Êtes-vous sûr de vouloir supprimer ce contact ?')){window.location.href='/contact/delete/{{contact.id}}'}">
+                            <i class="bi-trash-fill me-1"></i>
+                            Supprimer
+                        </button>
+                        <button class="btn btn-outline-warning flex-shrink-0 me-3" type="button" onclick="{window.location.href='/contact/edit/{{contact.id}}'}">
+                            <i class="bi-pen-fill me-1"></i>
+                            Modifier
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
